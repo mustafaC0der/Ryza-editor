@@ -2,26 +2,36 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QTabWidget>
 #include <QTextEdit>
-#include <QWidget>
+#include <QLineEdit>
+#include <QPushButton>
+#include "searchreplace.h"
 
 class MainWindow : public QMainWindow {
     Q_OBJECT
 
 public:
-    MainWindow();         // Constructor
-    ~MainWindow();        // Destructor
+    explicit MainWindow(QWidget *parent = nullptr);
+    ~MainWindow();
 
-    void show();          // Show the main window
+    void show();
 
 private slots:
-    void addNewTab();     // Slot to add a new tab
-    void closeTab(int index); // Slot to close a specific tab
+    void findText();
+    void replaceText();
+    void replaceAllText();
 
 private:
-    QWidget *centralWidget; // Main central widget
-    QTabWidget *tabWidget;  // Tab widget for managing multiple tabs
+    void setupUI();
+
+    QTextEdit *editor;           // Text editor widget
+    QLineEdit *searchBar;        // Search text input field
+    QLineEdit *replaceBar;       // Replace text input field
+    QPushButton *findButton;     // Button for "Find Next"
+    QPushButton *replaceButton;  // Button for "Replace"
+    QPushButton *replaceAllButton; // Button for "Replace All"
+
+    SearchReplace *searchReplace; // Object to handle Search and Replace functionality
 };
 
 #endif // MAINWINDOW_H
