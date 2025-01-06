@@ -1,4 +1,4 @@
-#include "GUI/MainWindow.h"
+#include "GUI/mainwindow.h"
 #include <iostream>
 
 int main(int argc, char* argv[]) {
