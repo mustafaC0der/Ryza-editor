@@ -1,4 +1,4 @@
-#include "GUI/MainWindow.h"
+#include "GUI/mainwindow.h"
 #include <iostream>
 
 void testMainWindowShow() {
