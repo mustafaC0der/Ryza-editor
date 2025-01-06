@@ -1,4 +1,4 @@
-#include "Editor/Editor.h"
+#include "Editor/editor.h"
 #include <cassert>
 #include <iostream>
 
